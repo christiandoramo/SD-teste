@@ -13,9 +13,8 @@
 
 ### instalando projeto
 
-docker compose up (pode usar em outro terminal)
-
 ```
+docker compose up (usar em outro terminal ou usar flag -d)
 npm install
 npx prisma generate (banco ligado)
 npx prisma migrate dev (deve rodar sempre que alterar o schema.prisma e com banco ligado)
@@ -23,17 +22,28 @@ npx prisma migrate dev (deve rodar sempre que alterar o schema.prisma e com banc
 
 ## Rodar localmente:
 
+    ```
+    docker compose up
+    npm run dev
+    ```
+
 ## Comandos extras
 
     Rodar containers em segundo plano:
+        ```
         docker compose up -d (-d para rodar em segundo plano)
+        ```
 
     Parar todos os containers:
+        ```
         docker stop $(docker ps -aq)
+        ```
 
     Resetar os bancos e containers (caso bug):
+        ```
         docker stop $(docker ps -aq) &&
         docker rm $(docker ps -aq) &&
         docker-compose down -v &&
         docker volume prune -f &&
         docker-compose up --build
+        ```
