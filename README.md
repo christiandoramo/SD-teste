@@ -18,7 +18,7 @@ docker compose up (pode usar em outro terminal)
 ```
 npm install
 npx prisma generate (banco ligado)
-npx prisma migrate dev (deve rodar sempre que houver migração nova e com banco ligado)
+npx prisma migrate dev (deve rodar sempre que alterar o schema.prisma e com banco ligado)
 ```
 
 ## Rodar localmente:
